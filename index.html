@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Açaí</title>
+    <link rel="stylesheet" href="/Frontend/style.css">
+    <link rel="icon" href="/Frontend/logo03.png" type="image/x-icon">
+
+</head>
+<body style="background-image: url('/Frontend/fundo.png'); background-size: cover; background-attachment: fixed;">
+    <div class="logo-container">
+       <img src="/Frontend/logo03.png" alt="Logo do Meu Açaí">
+    </div>
+
+    <header id="header">
+            <nav id="menu">
+                <ul class="nav-lista">
+                    <li><a href="feedback.html" id="abrir-feedback">O que achou do nosso Açaí?</a></li>
+                    <li><a href="https://glovoapp.com/pt/pt/castelo-branco/stores/meu-acai-cbr" target="_blank"> Glovo</a></li>
+                    <li><a href="https://www.ubereats.com/pt/store/meu-acai/a0Qz3m8PWMCPrMZZPgODbw?srsltid=AfmBOor_EoXcbb0XTAPWBiUAFBDT83tZlUbQ4NhVyzuHUjxAOqem29qU" target="_blank"> Uber Eats</a></li>
+                </ul>
+            </nav>
+        </header>
+
+    <div class="content" id="Home">
+        <h1>Bem-vindo ao Meu Açaí!</h1>
+        <p>O melhor açaí da cidade, feito com ingredientes frescos e de alta qualidade. Venha experimentar nossos deliciosos sabores e combos exclusivos!</p>
+    </div>
+    
+    <h1>Nossos Produtos e Preços em loja:</h1>
+    <div class="cards-container">
+    
+    <div class="card">
+        <img src="/Frontend/pequeno.jpg" alt="Açaí Pequeno">
+        <h3>Pequeno 320ml</h3>
+        <br>
+        <h3>6,50€</h3>
+    </div>
+    <div class="card">
+       
+        <img src="/Frontend/copofelicidade.jpg" alt="Médio">
+        <h3>Médio 430ml</h3>
+        <br>
+        <h3>8,50€</h3>
+    </div>
+    <div class="card">
+        <img src="/Frontend/açaigrande.jpg" alt="Açaí Grande">
+        <h3>Grande 540ml</h3>
+        <br>
+        <h3>10,50€</h3>
+    </div>
+     <div class="card">
+        <img src="/Frontend/tigela.jpg" alt="Tigela Premium-Somente disponível para pedidos na loja,não disponível para pedidos take-away">
+        <h3>Tigela Premium 700ml</h3>
+        <br>
+        <h3>14,90€</h3>
+     </div>
+   <div class="card">
+        <img src="/Frontend/coxinhademorango.png" alt="Coxinha">
+        <h3>Coxinha de Morango</h3>
+        <br>
+        <h3>3,50€</h3>
+    </div>
+     <div class="card">
+        <img src="/Frontend/paodequeijotradicional.png" alt="Pão de Queijo Tradicional">
+        <h3>Pão de Queijo Tradicional</h3>
+        <br>
+        <h3>3,50€</h3>
+    </div>
+     <div class="card">
+        <img src="/Frontend/paodequeijotradicional.png" alt="Pão de Queijo Docinho">
+        <h3>Pão de Queijo Docinho</h3>
+        <br>
+        <h3>3,80€</h3>
+     </div>
+     <div class="card">
+        <img src="/Frontend/paodequeijo.png" alt="Pão">
+        <h3>Pão de Queijo Creminho</h3>
+        <br>
+        <h3>4,00€</h3>
+    </div> </div>
+    <section class="content">
+    <h2>Por que escolher o nosso Açaí?</h2>
+    <p>Mais do que uma sobremesa, o açaí é um <strong>superalimento</strong> que traz benefícios incríveis para o seu bem-estar diário.</p>
+    
+        <div >
+            <span>⚡</span>
+            <h3>Energia Natural</h3>
+            <p>Ideal para enfrentar o dia a dia com disposição.</p>
+        </div>
+        <div>
+            <span>🛡️</span>
+            <h3>Antioxidantes</h3>
+            <p>Combate o envelhecimento celular e fortalece a imunidade.</p>
+        </div>
+        <div>
+            <span>❤️</span>
+            <h3>Saúde do Coração</h3>
+            <p>Ajuda a equilibrar o colesterol e proteger o sistema cardiovascular.</p>
+        </div>
+    </div>
+</section>
+   <form id="pedidoForm" class="content">
+    <h2>Faça seu Pedido-Take Away/Antecipar pedido</h2>
+
+    <h3 id="pedir-por-wpp">Escolha seu Açaí</h3>
+    <select id="tamanhoAcai" onchange="calcularTotal()">
+        <option value="Sem Açaí" data-preco-base="0">Não quero Açaí</option>
+        <option value="Pequeno 320ml - 6,50€" data-preco-base="6.50">Pequeno 320ml - 6,50€</option>
+        <option value="Médio 430ml - 8,50€" data-preco-base="8.50">Médio 430ml - 8,50€</option>
+        <option value="Grande 540ml - 10,50€" data-preco-base="10.50">Grande 540ml - 10,50€</option>
+        <option value="Tigela Premium 700ml - 14,90€" data-preco-base="14.90">Tigela Premium 700ml - 14,90€/Disponível apenas para pedidos e consumo na loja</option>
+    </select>
+
+    <div class="container-dual">
+        <div class="caixa-opcoes">
+            <h3>Complementos (até 4 grátis)</h3>
+            <div class="complementos" id="lista-comps">
+                <label><input type="checkbox" name="comp" value="Morango"> Morango</label>
+                <label><input type="checkbox" name="comp" value="Banana"> Banana</label>
+                <label><input type="checkbox" name="comp" value="Uva"> Uva</label>
+                <label><input type="checkbox" name="comp" value="Kiwi"> Kiwi</label>
+                <label><input type="checkbox" name="comp" value="Manga"> Manga</label>
+                <label><input type="checkbox" name="comp" value="Creme Maracujá"> Creme Maracujá</label>
+                <label><input type="checkbox" name="comp" value="Coco ralado"> Coco ralado</label>
+                <label><input type="checkbox" name="comp" value="Leite Condensado"> Leite Condensado</label>
+                <label><input type="checkbox" name="comp" value="Doce de leite"> Doce de leite</label>
+                <label><input type="checkbox" name="comp" value="Granola"> Granola</label>
+                <label><input type="checkbox" name="comp" value="Paçoca"> Paçoca</label>
+                <label><input type="checkbox" name="comp" value="Creme de Leite em Pó"> Creme de Leite em Pó</label>
+            </div>
+        </div>
+
+        <div class="caixa-opcoes">
+            <h3>Extras (+1,00€ cada)</h3>
+            <div class="complementos" id="lista-extras">
+                <label><input type="checkbox" name="ext" value="Leite em Pó" data-valor="1"> Leite em Pó</label>
+                <label><input type="checkbox" name="ext" value="Topping de Chocolate" data-valor="1"> Topping de Chocolate</label>
+                <label><input type="checkbox" name="ext" value="Topping de Morango" data-valor="1"> Topping de Morango</label>
+                <label><input type="checkbox" name="ext" value="KitKat" data-valor="1"> KitKat</label>
+                <label><input type="checkbox" name="ext" value="Creme de Avelã" data-valor="1"> Creme de Avelã</label>
+                <label><input type="checkbox" name="ext" value="Creme de Biscoff" data-valor="1"> Creme de Biscoff</label>
+            </div>
+        </div>
+    </div>
+
+    <h3>Pão de Queijo</h3>
+    <select id="paoQueijo" onchange="calcularTotal()">
+        <option value="Nenhum" data-preco="0">Não quero pão de queijo</option>
+        <option value="Tradicional - 3,50€" data-preco="3.50"> Pão de Queijo Tradicional - 3,50€</option>
+        <option value="Docinho - 3,80€" data-preco="3.80"> Pão de Queijo Docinho - 3,80€</option>
+        <option value="Creminho - 4,00€" data-preco="4.00"> Pão de Queijo Creminho - 4,00€</option>
+    </select>
+
+    <div class="total-container">
+        Total do Pedido: <span id="valorTotal">0,00€</span>
+    </div>
+    <h3>Saco +0,15€-Solicitar no balcão</h3>
+    <button type="button" class="btn-nav" onclick="adicionarAoCarrinho()">Adicionar ao Pedido</button>
+
+<div id="carrinho" style="margin-top: 20px; color: white;">
+    <h3>Seu Pedido:</h3>
+    <ul id="lista-pedido"></ul>
+    <p><strong>Total Geral: <span id="totalGeral">0,00€</span></strong></p>
+</div>
+<button type="button" class="btn-nav"  onclick="limparPedido()">Limpar Pedido</button>
+
+    <button type="button" class="btn-nav" onclick="enviarPedido()">Finalizar Pedido no WhatsApp</button>
+</form>
+
+
+<div class="content" >
+    <h2>Informações Importantes:</h2>
+    <p>Os preços acima são válidos para pedidos realizados diretamente pelo WhatsApp ou na loja física,e todos os valores estão com a taxa do IVA em vigor.Se optar por serviços de entrega,realize o mesmo pela plataforma Glovo,Uber Eats e Xicos onde os preços podem variar devido a taxas de entrega e outros custos adicionais. Para garantir a melhor experiência, recomendamos verificar os preços atualizados na plataforma de sua escolha antes de finalizar seu pedido.
+    </p>
+    <a href="https://glovoapp.com/pt/pt/castelo-branco/stores/meu-acai-cbr?content=menu-c.2635592426&section=acais-s.5583838043" class="btn-nav" target="_blank">Fazer Pedido pela Glovo</a>
+</div>
+
+ 
+
+     <div class="apresent">
+        <img src="/Frontend/naty.png" alt="Foto da Naty">
+        <div class="apresent-texto">
+            <h1>Olá, eu sou a Naty!</h1>
+            <p>Gostaria de lhe contar a nossa história: Tudo começou há três anos, com um sonho e o desejo de oferecer algo especial. Como uma brasileira batalhadora, sempre acreditei que o trabalho dedicado é o ingrediente principal para transformar grandes objetivos em realidade.
+
+A minha trajetória não foi feita de atalhos. Comecei de baixo, enfrentando os desafios de quem empreende com coragem. Cada etapa desse caminho foi trilhada com muito esforço e a certeza de que, com amor, seria possível construir algo sólido.
+
+Hoje, é com imenso orgulho que recebo cada um de vocês em nossa loja física em Castelo Branco. Este espaço é a materialização de um sonho, fruto de muita luta e trabalho diário.
+
+No "Meu Açaí", cada receita carrega essa história de superação. Obrigado por fazerem parte dessa conquista e por me permitirem recebê-los no meu cantinho especial. Venham nos visitar e sentir o sabor dessa história!</p>
+        </div>
+    </div>
+
+
+<div class="modal-sobreposicao" id="pop-up-container">
+    <div class="modal-caixa">
+        <span class="botao-fechar" id="fechar-pop-up">×</span>
+        <h1>Conte-nos a sua experiência!</h1>
+        <p style="margin-bottom: 30px; text-align: center;">O seu feedback ajuda-nos a preparar o melhor Açaí da cidade. Como foi o seu pedido?</p>
+        
+        <form id="form-feedback" class="form-feedback">
+            <div class="campo-form">
+                <label for="nome">Seu Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Como podemos te chamar?" required>
+            </div>
+            
+            <div class="campo-form" style="margin-top: 15px;">
+                <label for="avaliacao">O que achou do seu Açaí?</label>
+                <select id="avaliacao" name="avaliacao">
+                    <option value="excelente">Excelente, estava perfeito!</option>
+                    <option value="bom">Muito bom</option>
+                    <option value="regular">Pode melhorar</option>
+                    <option value="outro">Outro feedback</option>
+                </select>
+            </div>
+            
+            <div class="campo-form" style="margin-top: 15px;">
+                <label for="mensagem">Sua Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conta-nos... o açaí estava no ponto? O atendimento foi rápido?" required></textarea>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <button type="submit" class="btn-nav" style="border: none; cursor: pointer;">Enviar Avaliação</button>
+            </div>
+        </form>
+    </div>
+</div>
+<section class="contato-container">
+    <div class="info-contato">
+        <h2>Fale Conosco:</h2>
+        <p><strong>📍 Endereço:</strong> R. Médico Sousa Refois 41, 6000-250 Castelo Branco</p>
+        <p><strong>📞 WhatsApp:</strong> (+351) 964 073 360</p>
+        <p><strong>⏰ Horários:</strong> Ter: Fechado | Seg, Qua-Dom: 16:00–22:00</p>
+    </div>
+
+    <div class="mapa-quadrado">
+        <h2>Localização:</h2>
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3064.2576708922584!2d-7.485073123620318!3d39.823640191522664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd3d5df1d4332133%3A0x3758b3f78eeb9d7e!2zTWV1IEHDp2HDrQ!5e0!3m2!1spt-PT!2spt!4v1781033598610!5m2!1spt-PT!2spt" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</section>
+
+<footer class="footer-personalizado">
+    <div class="footer-container">
+        <div class="footer-coluna">
+            <h3>NAVEGAÇÃO</h3>
+            <a href="#Home">Home</a>
+            <a href="#pedir-por-wpp">Pedir por WhatsApp</a>
+             
+        </div>
+        <div class="footer-coluna">
+            <h3>SIGA-NOS</h3>
+            <a href="https://www.instagram.com/meuacaipt/" target="_blank">Instagram</a>
+            <a href="https://www.facebook.com/p/Meu-A%C3%A7a%C3%AD-61568752798946/" target="_blank">Facebook</a>
+        </div>
+        <div class="footer-coluna">
+            <h3>CONTACTOS</h3>
+            <p>📍 Rua Médico Souza,Refois-N41,Bairro Cansado</p>
+            <p>📞 +351 964 073 360</p>
+            <p>🕒 Qua a Seg: 16h - 22h</p>
+        </div>
+    </div>
+   <div class="rodape-inferior">
+            <div class="rodape-inferior-conteudo">
+                <p>&copy; 2026 Meu Açaí. Todos os direitos reservados.</p>
+                <p class="creditos">Desenvolvido por <a href="https://github.com/FernandaNamye" target="_blank">NamyeDev</a></p>
+            </div>
+        </div>
+</footer>
+   <a href="https://wa.me/351964073360?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido." 
+   target="_blank" 
+   class="whatsapp-float">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+<script>
+    const URL_API = " https://backend-meuacai.onrender.com/enviar-feedback";
+    
+    const checkboxes = document.querySelectorAll('input[name="comp"]');
+    const limite = 4;
+
+    checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener('change', () => {
+            
+            const marcados = document.querySelectorAll('input[name="comp"]:checked');
+            
+            if (marcados.length > limite) {
+                
+                checkbox.checked = false;
+                
+                
+                alert(`Você pode selecionar apenas ${limite} complementos!`);
+            }
+        });
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+    const botaoAbrir = document.getElementById('abrir-feedback');
+    const botaoFechar = document.getElementById('fechar-pop-up');
+    const containerPopUp = document.getElementById('pop-up-container');
+    const formFeedback = document.querySelector('.form-feedback');
+
+    if (botaoAbrir) {
+        botaoAbrir.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            containerPopUp.classList.add('ativo');
+        });
+    }
+
+    if (botaoFechar) {
+        botaoFechar.addEventListener('click', () => {
+            containerPopUp.classList.remove('ativo');
+        });
+    }
+
+    if (formFeedback) {
+        formFeedback.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const botaoSubmeter = formFeedback.querySelector('button[type="submit"]') || formFeedback.querySelector('.btn-nav');
+            const textoOriginal = botaoSubmeter ? botaoSubmeter.innerText : "Enviar Avaliação";
+            
+            if (botaoSubmeter) {
+                botaoSubmeter.innerText = "A enviar... Por favor, aguarde.";
+                botaoSubmeter.disabled = true;
+            }
+
+            
+            const dados = {
+                nome: document.getElementById('nome').value,
+                avaliacao: document.getElementById('avaliacao').value,
+                mensagem: document.getElementById('mensagem').value
+            };
+
+            try {
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 60000); 
+
+                const response = await fetch(URL_API, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(dados),
+                    signal: controller.signal
+                });
+
+                clearTimeout(timeoutId);
+
+                if (response.ok) {
+                    alert("Obrigado pelo seu feedback! O Meu Açaí agradece a sua preferência.");
+                    containerPopUp.classList.remove('ativo');
+                    formFeedback.reset();
+                } else {
+                    alert("Não foi possível enviar a sua avaliação no momento. Por favor, tente novamente mais tarde.");
+                }
+            } catch (error) {
+                console.error("Erro detalhado:", error);
+                if (error.name === 'AbortError') {
+                    alert("O servidor demorou a responder. Mas não se preocupe, o seu feedback é valioso para nós!");
+                } else {
+                    alert("De momento o nosso sistema de avaliações está em manutenção. Se preferir, envie-nos uma mensagem pelo WhatsApp!");
+                }
+            } finally {
+                if (botaoSubmeter) {
+                    botaoSubmeter.innerText = textoOriginal;
+                    botaoSubmeter.disabled = false;
+                }
+            }
+        });
+    }
+});
+
+    
+    function enviarPedido() {
+        const telefone = "351964073360";
+        const tamanho = document.getElementById("tamanhoAcai").value;
+        const pao = document.getElementById("paoQueijo").value;
+        
+        let comps = [];
+        document.querySelectorAll('input[name="comp"]:checked').forEach((c) => {
+            comps.push(c.value);
+        });
+
+        let mensagem = `*Novo Pedido - Meu Açaí*%0A%0A`;
+        mensagem += `Açaí: ${tamanho}%0A`;
+        mensagem += `Complementos: ${comps.length > 0 ? comps.join(", ") : "Nenhum"}%0A`;
+        mensagem += `Extras: ${comps.length > 0 ? comps.join(", ") : "Nenhum"}%0A`;
+        if (pao !== "Nenhum") {
+            mensagem += `Pão de Queijo: ${pao}%0A`;
+        }
+        mensagem += `Valor Total: ${document.getElementById("valorTotal").innerText}%0A`;
+
+        const url = `https://wa.me/${telefone}?text=${mensagem}`;
+        window.open(url, '_blank');
+    }
+</script>
+<script>
+function calcularTotal() {
+    let total = 0;
+
+    
+    const selectAcai = document.getElementById("tamanhoAcai");
+    const precoAcai = parseFloat(selectAcai.options[selectAcai.selectedIndex].getAttribute("data-preco-base")) || 0;
+    total += precoAcai;
+
+    
+    const selecionados = document.querySelectorAll('input[name="comp"]:checked');
+    selecionados.forEach((item) => {
+        
+        const valorItem = parseFloat(item.getAttribute("data-valor")) || 0;
+        total += valorItem; 
+    });
+    const selecionadosExt = document.querySelectorAll('input[name="ext"]:checked');
+    selecionadosExt.forEach((item) => {
+        total += parseFloat(item.getAttribute("data-valor")) || 0;
+    });
+
+   
+    const selectPao = document.getElementById("paoQueijo");
+    const precoPao = parseFloat(selectPao.options[selectPao.selectedIndex].getAttribute("data-preco")) || 0;
+    total += precoPao;
+
+    
+    document.getElementById("valorTotal").innerText = total.toFixed(2).replace('.', ',') + "€";
+}
+
+document.querySelectorAll('select, input[type="checkbox"]').forEach(el => {
+    el.addEventListener('change', calcularTotal);
+});
+</script>
+<script>
+    let carrinho = [];
+    let totalGeral = 0;
+
+    function adicionarAoCarrinho() {
+    const selectAcai = document.getElementById("tamanhoAcai");
+    const selectPao = document.getElementById("paoQueijo");
+    
+    const tamanho = selectAcai.value;
+    const pao = selectPao.value;
+    
+    
+    if (tamanho === "Sem Açaí" && pao === "Nenhum") {
+        return alert("Selecione um Açaí ou um Pão de Queijo para adicionar ao pedido!");
+    }
+
+    const comps = Array.from(document.querySelectorAll('input[name="comp"]:checked')).map(i => i.value);
+    const extras = Array.from(document.querySelectorAll('input[name="ext"]:checked')).map(i => i.value);
+    const precoAtual = parseFloat(document.getElementById("valorTotal").innerText.replace('€', '').replace(',', '.'));
+
+    
+    carrinho.push({ tamanho, pao, comps, extras, preco: precoAtual });
+    totalGeral += precoAtual;
+
+    
+    const lista = document.getElementById("lista-pedido");
+    const li = document.createElement("li");
+    
+
+    let textoItem = (tamanho !== "Sem Açaí" ? tamanho : "");
+    if (pao !== "Nenhum") textoItem += (textoItem ? " + " : "") + pao;
+    carrinho.push({ 
+    tamanho: document.getElementById("tamanhoAcai").value, 
+    pao: document.getElementById("paoQueijo").value,
+    comps, 
+    extras, 
+    preco: precoAtual 
+});
+    
+    li.innerText = `${textoItem} (Extras: ${extras.join(", ") || "Nenhum"})`;
+    lista.appendChild(li);
+    
+    document.getElementById("totalGeral").innerText = totalGeral.toFixed(2).replace('.', ',') + "€";
+    
+    limparFormulario();
+}
+function enviarPedido() {
+
+    if (carrinho.length === 0) return alert("Adicione itens ao pedido primeiro!");
+
+    let msg = `*Novo Pedido - Meu Açaí*%0A%0A`;
+    
+    
+    carrinho.forEach((item, index) => {
+        msg += `*Item ${index + 1}:*%0A`;
+        
+        if (item.tamanho !== "Sem Açaí" && item.tamanho !== "Não quero Açaí") {
+            msg += `- *Açaí:* ${item.tamanho}%0A`;
+        }
+    
+        if (item.pao !== "Nenhum") {
+            msg += `- *Pão de Queijo:* ${item.pao}%0A`;
+        }
+
+        msg += `- *Comp:* ${item.comps.length > 0 ? item.comps.join(", ") : "Nenhum"}%0A`;
+        msg += `- *Extras:* ${item.extras.length > 0 ? item.extras.join(", ") : "Nenhum"}%0A`;
+        msg += `%0A`;
+    });
+
+    msg += `*Total Geral:* ${document.getElementById("totalGeral").innerText}`;
+
+
+    const url = `https://wa.me/351964073360?text=${msg}`;
+    window.open(url, '_blank');
+}
+</script>
+<script>
+function limparPedido() {
+ 
+    carrinho = [];
+    
+    
+    document.getElementById("lista-pedido").innerHTML = "";
+    
+   
+    totalGeral = 0;
+    document.getElementById("totalGeral").innerText = "0,00€";
+    
+    
+    
+}
+</script>
+<script>
+function limparFormulario() {
+    
+    document.getElementById("pedidoForm").reset();
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+        checkbox.checked = false;
+    });
+    document.getElementById("valorTotal").innerText = "0,00€";
+    calcularTotal();
+}
+
+</script>
+</body>
+</html>

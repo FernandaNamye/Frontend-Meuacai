@@ -564,7 +564,7 @@ button {
         height: 100vh !important;
         overflow-y: auto !important; 
         overflow-x: hidden !important;
-        background-image: url('..fundoMobile.png') !important;
+        background-image: url('fundoMobile.png') !important;
         background-size: cover !important; 
         background-repeat: no-repeat !important;
         background-position: center top !important;

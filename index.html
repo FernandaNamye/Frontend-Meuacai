@@ -430,13 +430,12 @@ document.querySelectorAll('select, input[type="checkbox"]').forEach(el => {
     let carrinho = [];
     let totalGeral = 0;
 
-    function adicionarAoCarrinho() {
+  function adicionarAoCarrinho() {
     const selectAcai = document.getElementById("tamanhoAcai");
     const selectPao = document.getElementById("paoQueijo");
     
     const tamanho = selectAcai.value;
     const pao = selectPao.value;
-    
     
     if (tamanho === "Sem Açaí" && pao === "Nenhum") {
         return alert("Selecione um Açaí ou um Pão de Queijo para adicionar ao pedido!");
@@ -448,27 +447,18 @@ document.querySelectorAll('select, input[type="checkbox"]').forEach(el => {
 
     
     carrinho.push({ tamanho, pao, comps, extras, preco: precoAtual });
+    
     totalGeral += precoAtual;
+    document.getElementById("totalGeral").innerText = totalGeral.toFixed(2).replace('.', ',') + "€";
 
     
     const lista = document.getElementById("lista-pedido");
     const li = document.createElement("li");
-    
-
     let textoItem = (tamanho !== "Sem Açaí" ? tamanho : "");
     if (pao !== "Nenhum") textoItem += (textoItem ? " + " : "") + pao;
-    carrinho.push({ 
-    tamanho: document.getElementById("tamanhoAcai").value, 
-    pao: document.getElementById("paoQueijo").value,
-    comps, 
-    extras, 
-    preco: precoAtual 
-});
     
     li.innerText = `${textoItem} (Extras: ${extras.join(", ") || "Nenhum"})`;
     lista.appendChild(li);
-    
-    document.getElementById("totalGeral").innerText = totalGeral.toFixed(2).replace('.', ',') + "€";
     
     limparFormulario();
 }
